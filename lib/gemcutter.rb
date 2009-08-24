@@ -1,9 +1,5 @@
 class Gemcutter
-  if Rails.env.production?
-    include Vault::S3
-  else
-    include Vault::FS
-  end
+  include Vault::FS
 
   attr_reader :user, :data, :spec, :message, :code, :rubygem
 
